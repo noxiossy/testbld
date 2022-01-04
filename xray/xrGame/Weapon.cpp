@@ -126,7 +126,8 @@ void CWeapon::UpdateXForm	()
 	if ((HandDependence() == hd1Hand) || (GetState() == eReload) || (!E->g_Alive()))
 		boneL				= boneR2;
 
-	V->CalculateBones		();
+	V->CalculateBones_Invalidate		();
+	V->CalculateBones			(true);
 	Fmatrix& mL				= V->LL_GetTransform(u16(boneL));
 	Fmatrix& mR				= V->LL_GetTransform(u16(boneR));
 	// Calculate
@@ -1707,7 +1708,7 @@ void CWeapon::debug_draw_firedeps()
 const float &CWeapon::hit_probability	() const
 {
 	VERIFY					((g_SingleGameDifficulty >= egdNovice) && (g_SingleGameDifficulty <= egdMaster)); 
-	return					(m_hit_probability[egdNovice]);
+	return					(m_hit_probability[g_SingleGameDifficulty]);
 }
 
 void CWeapon::OnStateSwitch	(u32 S)

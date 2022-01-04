@@ -2,7 +2,7 @@
 #include "xrdebug.h"
 #include "os_clipboard.h"
 #include "../../3rd party/DxErr/src/dxerr.h"
-
+#include "blackbox/CrashHandler.h"
 #pragma warning(push)
 #pragma warning(disable:4995)
 #include <malloc.h>
@@ -180,6 +180,8 @@ void xrDebug::backend	(const char *expression, const char *description, const ch
 
 	if (get_on_dialog())
 		get_on_dialog()	(true);
+
+	FlushLog();
 
 #ifdef XRCORE_STATIC
 	MessageBox			(NULL,assertion_info,"X-Ray error",MB_OK|MB_ICONERROR|MB_SYSTEMMODAL);
