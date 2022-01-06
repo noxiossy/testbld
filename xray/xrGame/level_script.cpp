@@ -97,6 +97,7 @@ LPCSTR get_weather	()
 
 void set_weather	(LPCSTR weather_name, bool forced)
 {
+	forced = true;
 #ifdef INGAME_EDITOR
 	if (!Device.editor())
 #endif // #ifdef INGAME_EDITOR
