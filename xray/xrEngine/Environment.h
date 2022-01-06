@@ -283,7 +283,7 @@ protected:
 
 public:
 	INGAME_EDITOR_VIRTUAL	SThunderboltDesc* thunderbolt_description		(CInifile* config, shared_str const& section);
-	INGAME_EDITOR_VIRTUAL	SThunderboltCollection* thunderbolt_collection	(CInifile* pIni, LPCSTR section)
+	INGAME_EDITOR_VIRTUAL	SThunderboltCollection* thunderbolt_collection	(CInifile* pIni, LPCSTR section);
 	INGAME_EDITOR_VIRTUAL	SThunderboltCollection* thunderbolt_collection	(xr_vector<SThunderboltCollection*>& collection,  shared_str const& id);
 	INGAME_EDITOR_VIRTUAL	CLensFlareDescriptor*	add_flare				(xr_vector<CLensFlareDescriptor*>& collection, shared_str const& id);
 
