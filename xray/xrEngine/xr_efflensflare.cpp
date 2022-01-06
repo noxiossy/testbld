@@ -554,7 +554,7 @@ void CLensFlare::Render(BOOL bSun, BOOL bFlares, BOOL bGradient)
 	*/
 }
 
-shared_str CLensFlare::AppendDef(CEnvironment& environment, CInifile* pIni, LPCSTR sect)
+shared_str CLensFlare::AppendDef(CEnvironment& environment, LPCSTR sect)
 {
 	if (!sect||(0==sect[0])) return "";
     for (LensFlareDescIt it=m_Palette.begin(); it!=m_Palette.end(); it++)
