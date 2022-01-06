@@ -302,11 +302,11 @@ void CGamePersistent::WeathersUpdate()
 					if (eff->sound._handle())		eff->sound.play_at_pos(0,pos);
 				}
 			}
-			else if ( !ambient_particles && Device.dwTimeGlobal > ambient_effect_next_time ) {
+			/*else if ( !ambient_particles && Device.dwTimeGlobal > ambient_effect_next_time ) {
 				CEnvAmbient::SEffect* eff = env_amb->get_rnd_effect();
 				if ( eff )
 					ambient_effect_next_time = Device.dwTimeGlobal + env_amb->get_rnd_effect_time();
-			}
+			}*/
 		}
 
 		// stop if time exceed or indoor
